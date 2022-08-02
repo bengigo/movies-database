@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// fetch data from the api\n\nconst getData = async () => {\n  await fetch(\"https://api.tvmaze.com/shows\")\n    .then((response) => response.json())\n    .then((json) => displayShow(json).slice(0, 20));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n\n//# sourceURL=webpack://movies-database/./src/modules/api-data.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// fetch data from the api\n\nconst getData = async () => {\n  await fetch('https://api.tvmaze.com/shows')\n    .then((response) => response.json());\n  // .then((json) => displayShow(json).slice(0, 20));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n\n//# sourceURL=webpack://movies-database/./src/modules/api-data.js?");
 
 /***/ })
 

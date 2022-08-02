@@ -2,6 +2,7 @@
   font-family: 'Lora', serif;
 }
 
-#other-interfaces {
+#navigation {
   display: flex;
+  flex-direction: row;
 }

@@ -56,7 +56,7 @@
 #footer {
   display: flex;
   justify-content: space-between;
-  position: fixed;
+  /* position: fixed; */
   bottom: 10px;
   border-top: 2px solid black;
   width: 100vw;

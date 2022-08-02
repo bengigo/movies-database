@@ -1,5 +1,22 @@
 * {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 10px;
+  border-top: 2px solid black;
+  width: 100vw;
+  padding: 15px 5px;
+}
+
+#footer a {
+  text-decoration: none;
 }
 
 #navigation {

@@ -1,3 +1,7 @@
 * {
   font-family: 'Lora', serif;
 }
+
+#other-interfaces {
+  display: flex;
+}

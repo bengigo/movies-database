@@ -39,6 +39,20 @@
   line-height: 20px;
 }
 
+#list {
+  margin: 80px auto;
+  padding-left: 100px;
+  /* padding-bottom: 150px; */
+  /* margin-left: 100px; */
+  /* border: 1px solid; */
+
+  /* padding: 100px; */
+  
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 60px;
+}
+
 #footer {
   display: flex;
   justify-content: space-between;

@@ -11,12 +11,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      plugins: [
-        new HtmlWebpackPlugin({
-          title: "Output Management",
-          template: "./src/index.html",
-        }),
-      ],
+      template: "./src/index.html",
     }),
   ],
   output: {
@@ -24,9 +19,6 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
-  //   optimization: {
-  //     runtimeChunk: 'single',
-  //   },
   module: {
     rules: [
       {

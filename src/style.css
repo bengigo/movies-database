@@ -1,3 +1,15 @@
 * {
   font-family: 'Lora', serif;
 }
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+#footer a {
+  text-decoration: none;
+}

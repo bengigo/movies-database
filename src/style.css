@@ -5,6 +5,40 @@
   padding: 0;
 }
 
+#navigation {
+  display: flex;
+  padding: 15px;
+}
+
+.logo {
+  justify-content: flex-start;
+  color: #000;
+  text-decoration: none;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 20px;
+  align-items: center;
+  margin-left: 100px;
+}
+
+#other-interfaces {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.interface {
+  color: #000;
+  margin-left: 300px;
+  text-decoration: none;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 20px;
+}
+
 #footer {
   display: flex;
   justify-content: space-between;
@@ -12,7 +46,7 @@
   bottom: 10px;
   border-top: 2px solid black;
   width: 100vw;
-  padding: 15px 5px;
+  padding: 15px 100px;
 }
 
 #footer a {

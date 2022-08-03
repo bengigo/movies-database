@@ -4,4 +4,4 @@ import displayShows from './modules/displayList.js';
 
 getData();
 
-displayShows();
+// displayShows();

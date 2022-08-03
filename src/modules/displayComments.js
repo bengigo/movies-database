@@ -1,3 +1,4 @@
+
 import INVOLVEMENT_URL from './involvementAPI.js';
 
 const comments1 = document.querySelector('.comments-collection');
@@ -6,7 +7,7 @@ const displayComments = (item) => {
   const commentsHead = '<h2 class="comments-counter">Comments(0)</h2>';
   comments1.innerHTML = commentsHead;
 
-  fetch(`${INVOLVEMENT_URL}/comments?item_id=${item}`)
+fetch(`${INVOLVEMENT_URL}/comments?item_id=${item}`)
     .then((response) => response.json())
     .then((data) => {
       if (data.error) return;

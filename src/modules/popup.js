@@ -1,15 +1,18 @@
 import displayComments from './displayComments';
-import addComment from './addComments.js';
-import getData  from './api-data';
+import commentsAdded from './addComments.js';
 
 const commentFunction = () => {
-  getData();
+  const getMovieData = async (id) => {
+      const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
+      const show = await response.json();
+      return show;
+  }
   const commentButtons = document.querySelectorAll('.btn-comments');
   const openPopup = (event) => {
     const targetId = event.target.id;
-    const dialog = document.querySelector('dialog');
+    const dialog = document.querySelector('#list');
     dialog.showModal();
-    getSingleMovieData(targetId).then((singleData) => {
+    getMovieData(targetId).then((singleData) => {
       dialog.innerHTML = `
           <a id="close-button" class="comment-popup-close-button" href="#">X</a>
           <div class="poster-container">
@@ -25,8 +28,8 @@ const commentFunction = () => {
           <p id="review-title">Reviews (<span id="review-count">0</span>)</p>
           <form action="#" class="add-comments">
             <h3>Add your comment</h3>
-            <input type="text" id="name" name="username1" placeholder="Type your name here">
-            <textarea id="comments" name="message" cols="40" rows="5" placeholder="Write you comment here.."></textarea>
+            <input type="text" id="name" class="alert-button" name="username1" placeholder="Type your name here">
+            <textarea id="comments" class="alert-button" name="message" cols="40" rows="5" placeholder="Write you comment here.."></textarea>
             <button type="submit" class="submit-comments">Comment</button>
           </form>
         `;
@@ -36,9 +39,15 @@ const commentFunction = () => {
         dialog.close();
       });
       displayComments(targetId);
-      addComment(targetId);
+      commentsAdded(targetId);
     });
   };
+
+  // commentButtons.classList.add('active');
+  // commentButtons.style.diplay = 'red';
+// commentButtons.onClick = () => {
+//     openPopup();
+// }
   const addClickEvent = (button) => {
     button.addEventListener('click', openPopup);
   };

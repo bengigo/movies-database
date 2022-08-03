@@ -1,32 +1,38 @@
-import INVOLVEMENT_URL from './involvementAPI.js';
 import displayComments from './displayComments.js';
 
-const formEl = document.querySelector('.add-comments');
-const { username1, message } = formEl.elements;
-const addComment = () => {
-  formEl.addEventListener('submit', async (event) => {
-    event.preventDefault();
+const commentsAdded = (idItems) => {
+    const INVOLVEMENT_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/QhgWz32GeSKsu1QMY3gI/comments';
 
-    const username = username1.value;
-    const comment = message.value;
+    const formElements = (commentor, comments, callback) => {
+        fetch(`${INVOLVEMENT_URL}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+            item_id: `item${idItems}`,
+            username: `${commentor}`,
+            comment: `${comments}`,
 
-    if (!username || !comment) return;
+        }),
 
-    await fetch(`${INVOLVEMENT_URL}/comments`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        item_id: formEl.dataset.item,
-        username,
-        comment,
-      }),
+        });
+    
+    const dateFormatYmd = (date) => date.toISOString().slice(0,10);
+    const d = dateFormatYmd(new Date());
+    callback([
+        { creationDate: `${d}`, username: `${commentor}`, comment: `${comments}` },
+        
+    ]);
+    }
+    const formContent = document.querySelector('.add-comments');
+    formContent.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const commentorSelector = document.querySelector('#name');
+        const commentsSelector = document.querySelector('#comments');
+        const commentor = commentorSelector.value;
+        const comments = commentsSelector.value;
+        formElements(commentor, comments, displayComments)
     });
-
-    username1.value = '';
-    message.value = '';
-
-    displayComments(formEl.dataset.item);
-  });
 };
 
-export default addComment;
+export default commentsAdded;
+

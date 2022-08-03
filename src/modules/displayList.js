@@ -1,4 +1,6 @@
-const displayShows = (shows) => {
+import commentFunction from "./popup";
+
+export const displayShows = (shows) => {
   const displayContainer = document.querySelector('#list');
 
   shows.forEach((show) => {
@@ -13,5 +15,6 @@ const displayShows = (shows) => {
         `;
   });
 };
+
 
 export default displayShows;

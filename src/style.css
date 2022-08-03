@@ -39,10 +39,32 @@
   line-height: 20px;
 }
 
+#list {
+  margin: 80px auto;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 60px;
+  grid-column-gap: 60px;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+}
+
+img {
+  height: 300px;
+  width: 210px;
+}
+
 #footer {
   display: flex;
   justify-content: space-between;
-  position: fixed;
   bottom: 10px;
   border-top: 2px solid black;
   width: 100vw;

@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_api_data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/api-data.js */ \"./src/modules/api-data.js\");\n/* harmony import */ var _modules_displayList_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/displayList.js */ \"./src/modules/displayList.js\");\n\n\n\n\n(0,_modules_api_data_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n// displayShows();\n\n\n//# sourceURL=webpack://movies-database/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_api_data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/api-data.js */ \"./src/modules/api-data.js\");\n\n\n\n(0,_modules_api_data_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n// displayShows();\n\nconst testBtn = document.querySelectorAll('.btn-comments');\ntestBtn.forEach((btn) => {\n    btn.addEventListener('click', () => {\n        console.log('hey');\n    })\n})\n\nconst displayContainer = document.querySelector('#list');\n displayContainer.addEventListener('click', (e) => {\n    if(e.target.classList.contains('btn-comments')) {\n        alert('heyyo');\n    }\n });\n\n//# sourceURL=webpack://movies-database/./src/index.js?");
 
 /***/ }),
 

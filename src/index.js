@@ -1,31 +1,3 @@
-// import displayShows from './modules/displayList.js';
-// import commentsAdded from './modules/addComments.js';
-// import displayComments from './modules/displayComments.js'
-
-
-// displayShows();
-// commentsAdded();
-// displayComments();
-
-// getData();
-
-// displayShows();
-
-// const testBtn = document.querySelectorAll('.btn-comments');
-// testBtn.forEach((btn) => {
-//     btn.addEventListener('click', () => {
-//         console.log('hey');
-//     })
-// })
-
-// const displayContainer = document.querySelector('#list');
-//  displayContainer.addEventListener('click', (e) => {
-//     if(e.target.classList.contains('btn-comments')) {
-//         alert('heyyo');
-//     }
-//  });
-
-
 /* eslint-disable import/prefer-default-export */
 
 
@@ -100,7 +72,6 @@ btnModalComments.forEach((Modalcomment) => {
   });
 });
 
-// closeButton.addEventListener('click', toggleModal);
 
 // ADD COMMENT
 
@@ -126,13 +97,29 @@ displayContainer.addEventListener('click', async (e) => {
     const getCommentId = e.target.id.split('-')[0];
     overlay.insertAdjacentHTML('afterbegin',await Display(getCommentId))
     window.scroll({ top: 0, left: 0 });}
+});  
+
+const closeButton = document.querySelector('.close-button');
+closeButton.addEventListener('onClick', async (e) => {
+    if(e.target.classList.contains('close-button')) {
+        Display(getCommentId).classList.remove('active');
+    };
 });
 
-const closeButton = document.querySelector('#close-button');
+
+// closeButton.addEventListener('onClick', async (e) => {
+//     if(e.target.classList.contains('close-button')) {
+//         Display(getCommentId).classList.remove('active');
+//     };
+// });
+  
+// const closeButton = document.querySelector('#close-button');
 
 
-if(closeButton) {
-    overlay.classList.remove('active')
-    const getCommentId = e.target.id.split('-')[0];
-    getCommentId.close();
-  }
+// if(closeButton) {
+//     overlay.classList.remove('active')
+//     const getCommentId = e.target.id.split('-')[0];
+//     getCommentId.close();
+//   }
+
+//   closeButton.addEventListener('click', Display);

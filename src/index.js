@@ -40,11 +40,11 @@ getData();
 import { Display } from './modules/showComments.js';
 import { addLikes, getAllLikes, getAllMovies, addComment } from './modules/getComments';
 import Comment from './modules/comments.js';
+import displayComments from './modules/displayComments';
 
 const shows = await getAllMovies();
 // const likes = await getAllLikes();
 const modal = document.querySelector('.modal');
-const closeButton = document.querySelector('#close-button');
 const image = document.getElementById('img-detail');
 const btnModalComments = document.querySelectorAll('#modal-comments');
 const total = document.querySelectorAll('.likeId');
@@ -128,8 +128,11 @@ displayContainer.addEventListener('click', async (e) => {
     window.scroll({ top: 0, left: 0 });}
 });
 
-closeButton.addEventListener('click', {
-  });
-  
-  
+const closeButton = document.querySelector('#close-button');
 
+
+if(closeButton) {
+    overlay.classList.remove('active')
+    const getCommentId = e.target.id.split('-')[0];
+    getCommentId.close();
+  }

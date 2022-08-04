@@ -13,6 +13,7 @@ const commentFunction = () => {
     const dialog = document.querySelector('#list');
     dialog.showModal();
     getMovieData(targetId).then((singleData) => {
+      console.log(singleData)
       dialog.innerHTML = `
           <a id="close-button" class="comment-popup-close-button" href="#">X</a>
           <div class="poster-container">
@@ -38,19 +39,26 @@ const commentFunction = () => {
       closeButton.addEventListener('click', () => {
         dialog.close();
       });
+
       displayComments(targetId);
       commentsAdded(targetId);
     });
   };
 
-  // commentButtons.classList.add('active');
-  // commentButtons.style.diplay = 'red';
-// commentButtons.onClick = () => {
-//     openPopup();
-// }
-  const addClickEvent = (button) => {
-    button.addEventListener('click', openPopup);
-  };
+  const testBtn = document.querySelectorAll('.btn-comments');
+  testBtn.forEach((btn) => {
+    btn.addEventListener('click', openPopup);
+    
+});
+
+const dialog = document.querySelector('#list');
+ dialog.addEventListener('click', (e) => {
+    if(e.target.classList.contains('btn-comments')) {
+      // console.log(commentFunction);
+        alert(commentFunction);
+    }
+ });
+
   commentButtons.forEach(addClickEvent);
 };
 export default commentFunction;

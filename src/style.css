@@ -100,7 +100,8 @@ img {
   border: none;
   background-color: rgba(221, 221, 221, 0.959);
   max-width: 100%;
-  height: 100%;
+
+  /* height: 100%; */
   overflow: scroll;
   height: 100vh;
 }
@@ -140,6 +141,7 @@ dialog .close {
   cursor: pointer;
   text-align: center;
 }
+
 #show-the-reservation {
   display: none;
   position: fixed;

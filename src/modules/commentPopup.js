@@ -1,5 +1,4 @@
-import displayComments from "./comments.js";
-
+import displayComments from './comments.js';
 
 const comments = () => {
   const getShowData = async (id) => {
@@ -31,15 +30,11 @@ const comments = () => {
         <h3 class="comments-counter">Comments(0)</h3>
         </ul>
         </div>
-        `;    
-
-
-        
+        `;
       });
     }
 
-
-    if (e.target.classList.contains("close")) {
+    if (e.target.classList.contains('close')) {
       const dialog = document.querySelector('dialog');
       dialog.close();
     }
@@ -52,8 +47,6 @@ const comments = () => {
       dialog.close();
     }
   });
-
 };
-
 
 export default comments;

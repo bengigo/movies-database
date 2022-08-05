@@ -21,7 +21,7 @@ export const displayComment = (comments) => {
 export const getComment = (idTarget) => {
   const involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/x3jKfe1LZsfM9ZMX6ICC/comments?item_id=item1';
 
-  fetch(`${involvementURL }${idTarget}`)
+  fetch(`${involvementURL}${idTarget}`)
     .then((response) => response.json())
     .then((json) => displayComment(json))
     .then(() => countComment());

@@ -2,7 +2,7 @@
 /*  eslint comma-dangle: ["error", "never"]   */
 
 const endpointLink =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/j2re1UnEtKqKdvrLaCym/';
+  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tr6fRffFTZh6EiaoJoDj';
 const fetchReservations = async (movieId) => {
   const response = await fetch(
     `${endpointLink}reservations?item_id=${movieId}`

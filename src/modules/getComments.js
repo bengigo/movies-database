@@ -18,8 +18,8 @@ const addComment = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         item_id: formEl.idTarget,
-        username,
-        comment,
+        username: username1,
+        comment: commentMsg1,
       }),
     });
 

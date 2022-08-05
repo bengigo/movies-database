@@ -103,10 +103,10 @@ img {
   max-height: 100%;
 }
 
-.comment-popup-close-button {
+dialog .close {
   position: fixed;
   font-size: 42px;
-  right: 10px;
+  right: 50px;
   z-index: 999;
   cursor: pointer;
   padding: 5px;
@@ -117,14 +117,13 @@ img {
   mix-blend-mode: difference;
 }
 
-.movie-description {
-  width: 100%;
-  text-align: center;
+.popup-poster {
+  margin-left: 550px;
 }
 
-.decriptionP {
+.title-row {
   width: 50%;
-  margin: 20px auto;
+  margin: auto;
   color: #000;
   text-align: center;
 }
@@ -132,64 +131,4 @@ img {
 .poster-container {
   width: 100%;
   text-align: center;
-}
-
-#media-poster {
-  position: relative;
-  width: 20%;
-}
-
-.display-none {
-  display: none;
-}
-
-#comment-section {
-  text-align: center;
-  padding: 0;
-}
-
-#comment-section p {
-  color: white;
-}
-
-#review-title {
-  color: white;
-  font-weight: 600;
-}
-
-#comment-section hr {
-  width: 30%;
-  border-color: rgb(64, 64, 64);
-  border-width: 0.1px;
-}
-
-#add-comment {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 20px;
-}
-
-#reviewer-name {
-  width: 40%;
-  height: 30px;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-#review {
-  width: 40%;
-  height: 100px;
-  font-size: 16px;
-  font-family: inherit;
-  font-weight: 400;
-}
-
-#comment-submit {
-  width: 100px;
-  height: 50px;
-  font-size: 16px;
-  background-color: white;
 }

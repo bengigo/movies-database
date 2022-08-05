@@ -8,9 +8,9 @@ const comments = () => {
     return showData;
   };
 
-  const displayContainer = document.querySelector("#list");
-  displayContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("btn-comments")) {
+  const displayContainer = document.querySelector('#list');
+  displayContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-comments')) {
       const dialog = document.querySelector('dialog');
       dialog.showModal();
       const targetId = e.target.id;
@@ -30,10 +30,13 @@ const comments = () => {
         <ul class="comment-section">
         <h3 class="comments-counter">Comments(0)</h3>
         </ul>
+        </div>
         `;    
 
+
+        
       });
-    };
+    }
 
 
     if (e.target.classList.contains("close")) {
@@ -44,6 +47,10 @@ const comments = () => {
 
     displayComments(targetId);
 
+    if (e.target.classList.contains('close')) {
+      const dialog = document.querySelector('dialog');
+      dialog.close();
+    }
   });
 
 };

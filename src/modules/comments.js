@@ -22,9 +22,9 @@ export const displayComments = (comments) => {
 
 
 export const getComment = (idTarget) => {
-  const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tr6fRffFTZh6EiaoJoDj/comments?item_id=item';
+  const involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/x3jKfe1LZsfM9ZMX6ICC/comments?item_id=item1';
 
-  fetch(`${urlRoot}${idTarget}`)
+  fetch(`${involvementURL}${idTarget}`)
     .then((response) => response.json())
     .then((json) => displayComments(json))
     .then(() => countComment());

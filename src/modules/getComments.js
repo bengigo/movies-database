@@ -9,7 +9,7 @@ const addComment = () => {
     const username = username1.value;
     const comment = commentMsg1.value;
 
-    const involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tr6fRffFTZh6EiaoJoDj';
+    const involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/x3jKfe1LZsfM9ZMX6ICC';
 
     if (!username || !comment) return;
 

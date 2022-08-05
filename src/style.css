@@ -5,9 +5,28 @@
   padding: 0;
 }
 
+body {
+  position: relative;
+}
+
 #navigation {
   display: flex;
   padding: 15px;
+}
+
+.over-lay {
+  height: 50vw;
+  width: 100vw;
+  position: absolute;
+  max-width: inherit;
+  z-index: 5;
+  display: none;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.over-lay.active {
+  display: block;
 }
 
 .logo {
@@ -73,4 +92,43 @@ img {
 
 #footer a {
   text-decoration: none;
+}
+
+/* comment pop-up */
+.Popup-container {
+  position: fixed;
+  border: none;
+  background-color: rgba(221, 221, 221, 0.959);
+  max-width: 100%;
+  height: 100vh;
+}
+
+dialog .close {
+  position: fixed;
+  font-size: 42px;
+  right: 50px;
+  z-index: 999;
+  cursor: pointer;
+  padding: 5px;
+  border-top: 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.popup-poster {
+  margin-left: 550px;
+}
+
+.title-row {
+  width: 50%;
+  margin: auto;
+  color: #000;
+  text-align: center;
+}
+
+.poster-container {
+  width: 100%;
+  text-align: center;
 }

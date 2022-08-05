@@ -20,6 +20,11 @@
   },
   "homepage": "https://github.com/bengigo/movies-database#readme",
   "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/preset-env": "^7.18.10",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^28.1.3",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^28.1.3",

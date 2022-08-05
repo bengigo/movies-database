@@ -1,15 +1,17 @@
 const displayShows = (shows) => {
   const displayContainer = document.querySelector('#list');
-
   shows.forEach((show) => {
     displayContainer.innerHTML += `
         <div class="show">
           <img class="poster" src="${show.image.medium}" alt="${show.name} poster">
-          <h2 class="name">${show.name}</h2>
-          <p class="genre">${show.genres}</p>
-          <button id="${show.id}-comments" class="btn-comments">Comments</button>
-          <button id="${show.id}-reservations" class="btn-reservations">Reservations</button>
+          <div class="title-row">
+            <h2 class="name">${show.name}</h2>
           </div>
+          <p class="genre">${show.genres}</p>
+          <button id="${show.id}" class="btn-comments">Comments</button>
+          <button id="${show.id}" class="btn-reservations">Reservations</button>
+          </div>
+          <dialog></dialog>
         `;
   });
 };

@@ -1,19 +1,18 @@
-import showLikes from "./displayLikes";
+import showLikes from './displayLikes.js';
 
-const involvementURL =
-  "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tr6fRffFTZh6EiaoJoDj";
+const involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tr6fRffFTZh6EiaoJoDj';
 
-  const getLikes = async () => {
-    await fetch(`${involvementURL}/likes`)
-      .then((response) => response.json())
-      .then((response) => showLikes(response));
-  };
+const getLikes = async () => {
+  await fetch(`${involvementURL}/likes`)
+    .then((response) => response.json())
+    .then((response) => showLikes(response));
+};
 
 const postLikes = async (id) => {
   await fetch(`${involvementURL}/likes`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({ item_id: id }),
   });

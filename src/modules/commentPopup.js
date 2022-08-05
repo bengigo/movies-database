@@ -1,5 +1,4 @@
-import displayComments from "./comments.js";
-
+import displayComments, { getComment } from "./comments.js";
 
 const comments = () => {
   const getShowData = async (id) => {
@@ -30,6 +29,12 @@ const comments = () => {
         <ul class="comment-section">
         <h3 class="comments-counter">Comments(0)</h3>
         </ul>
+        <form action="#" class="add-comments">
+        <h3>Add your comment</h3>
+        <input type="text" id="name" name="username1" placeholder="Type your name here">
+        <textarea id="comments" name="commentMsg1" cols="40" rows="5" placeholder="Write you comment here.."></textarea>
+        <button type="submit" class="submit-comments">Comment</button>
+        </form> -->
         `;    
 
       });
@@ -43,6 +48,7 @@ const comments = () => {
     const targetId = e.target.id;
 
     displayComments(targetId);
+    getComment(targetId);
 
   });
 

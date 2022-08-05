@@ -1,4 +1,4 @@
-export const countComment = () => {
+const countComment = () => {
   const commentsCounterSpan = document.querySelector('.comments-counter');
 
   const commentCounter = document.querySelector('.comment-section');
@@ -7,8 +7,9 @@ export const countComment = () => {
   commentsCounterSpan.innerHTML = allChildren;
 };
 
-export const displayComment = (comments) => {
+export const displayComments = (comments) => {
   const displayCommentContainer = document.querySelector('.comment-section');
+  if (Array.isArray(comments)) {
   comments.forEach((comment) => {
     displayCommentContainer.innerHTML += `
     <li><p class="comment-username">${comment.creation_date} ${comment.username}: ${comment.comment}</p></li>
@@ -17,14 +18,16 @@ export const displayComment = (comments) => {
   });
   countComment();
 };
+};
+
 
 export const getComment = (idTarget) => {
-  const involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/x3jKfe1LZsfM9ZMX6ICC/comments?item_id=item1';
+  const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tr6fRffFTZh6EiaoJoDj/comments?item_id=item';
 
-  fetch(`${involvementURL }${idTarget}`)
+  fetch(`${urlRoot}${idTarget}`)
     .then((response) => response.json())
-    .then((json) => displayComment(json))
+    .then((json) => displayComments(json))
     .then(() => countComment());
 };
 
-export default getComment;
+export default getComment();

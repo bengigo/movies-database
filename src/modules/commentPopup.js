@@ -5,9 +5,9 @@ const comments = () => {
     return showData;
   };
 
-  const displayContainer = document.querySelector("#list");
-  displayContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("btn-comments")) {
+  const displayContainer = document.querySelector('#list');
+  displayContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-comments')) {
       const dialog = document.querySelector('dialog');
       dialog.showModal();
       const targetId = e.target.id;
@@ -27,14 +27,12 @@ const comments = () => {
 
         `;
       });
-    };
+    }
 
-    if (e.target.classList.contains("close")) {
+    if (e.target.classList.contains('close')) {
       const dialog = document.querySelector('dialog');
       dialog.close();
     }
-
-    
   });
 };
 

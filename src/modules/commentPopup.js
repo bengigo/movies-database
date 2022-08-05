@@ -14,6 +14,7 @@ const comments = () => {
 
       getShowData(targetId).then((showData) => {
         dialog.innerHTML = `
+        <div class="Popup-container">
         <span class="close material-symbols-outlined">&times</span>
         <img class="popup-poster" src="${showData.image.medium}">
         <div class="title-row">
@@ -22,6 +23,7 @@ const comments = () => {
         <p class="poster-container">${showData.genres}</p>
         <p class="poster-container">${showData.language}</p>
         <p class="poster-container">${showData.summary}</p>
+        </div>
         `;
       });
     };

@@ -166,7 +166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"involvementURL\": () => (/* binding */ involvementURL)\n/* harmony export */ });\nconst involvementURL =\r\n  \"https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tr6fRffFTZh6EiaoJoDj\";\n\n//# sourceURL=webpack://movies-database/./src/modules/involvementUrl.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst involvementURL =\r\n  \"https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/x3jKfe1LZsfM9ZMX6ICC/\";\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (involvementURL);\n\n//# sourceURL=webpack://movies-database/./src/modules/involvementUrl.js?");
 
 /***/ })
 

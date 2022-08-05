@@ -100,7 +100,8 @@ img {
   border: none;
   background-color: rgba(221, 221, 221, 0.959);
   max-width: 100%;
-  height: 100vh;
+  height: 100%;
+  overflow: scroll;
 }
 
 dialog .close {
@@ -118,6 +119,7 @@ dialog .close {
 }
 
 .popup-poster {
+  text-align: center;
   margin-left: 550px;
 }
 
@@ -130,5 +132,10 @@ dialog .close {
 
 .poster-container {
   width: 100%;
+  text-align: center;
+}
+
+.comments-counter {
+  cursor: pointer;
   text-align: center;
 }

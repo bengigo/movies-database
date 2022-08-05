@@ -21,28 +21,32 @@ const comments = () => {
         <span class="close material-symbols-outlined">&times</span>
         <img class="popup-poster" src="${showData.image.medium}">
         <div class="title-row">
-          <h3>${showData.name}</h3><span>${showData.rating.average}</span>
+          <h3>${showData.name}</h3> ⭐<span>${showData.rating.average}</span>
         </div>
         <p class="poster-container">${showData.genres}</p>
         <p class="poster-container">${showData.language}</p>
         <p class="poster-container">${showData.summary}</p>
-        </div>
-        `;
-
-        if (e.target.classList.contains("close")) {
-          const dialog = document.querySelector('dialog');
-          dialog.close();
-        }
-    
-        displayComments(targetId);
+        <br>
+        <ul class="comment-section">
+        <h3 class="comments-counter">Comments(0)</h3>
+        </ul>
+        `;    
 
       });
     };
 
 
-    
+    if (e.target.classList.contains("close")) {
+      const dialog = document.querySelector('dialog');
+      dialog.close();
+    }
+    const targetId = e.target.id;
+
+    displayComments(targetId);
+
   });
 
 };
+
 
 export default comments;

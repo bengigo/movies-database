@@ -1,29 +1,30 @@
-import involvementURL  from './involvementUrl';
+export const countComment = () => {
+  const commentsCounterSpan = document.querySelector('.comments-counter');
 
-const commentsEl = document.querySelector('.comments-collection');
+  const commentCounter = document.querySelector('.comment-section');
+  const allChildren = commentCounter.getElementsByTagName('li').length;
 
-const displayComments = (item) => {
-  const commentsHead = '<h2 class="comments-counter">Comments(0)</h2>';
-  commentsEl.innerHTML = commentsHead;
-
-  fetch(`${involvementURL }/comments?item_id=${item}`)
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.error) return;
-      document.querySelector('.comments-counter').innerHTML = `Comments (${data.length || 0})`;
-
-      data.forEach((comment) => {
-        const contentHTML = document.createElement('div');
-        contentHTML.classList.add('comment');
-        contentHTML.innerHTML = `
-          <div class="comment-head">
-          <a href='https://github.com/${comment.username}'>${comment.username}</a>
-          <p class="date-posted">-${comment.creation_date}</p>
-          </div>
-          <p>${comment.comment}</p>`;
-        commentsEl.appendChild(contentHTML);
-      });
-    });
+  commentsCounterSpan.innerHTML = allChildren;
 };
 
-export default displayComments;
+export const displayComment = (comments) => {
+  const displayCommentContainer = document.querySelector('.comment-section');
+  comments.forEach((comment) => {
+    displayCommentContainer.innerHTML += `
+    <li><p class="comment-username">${comment.creation_date} ${comment.username}: ${comment.comment}</p></li>
+    <hr>
+    `;
+  });
+  countComment();
+};
+
+export const getComment = (idTarget) => {
+  const involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/x3jKfe1LZsfM9ZMX6ICC/comments?item_id=item1';
+
+  fetch(`${involvementURL }${idTarget}`)
+    .then((response) => response.json())
+    .then((json) => displayComment(json))
+    .then(() => countComment());
+};
+
+export default getComment;

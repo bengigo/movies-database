@@ -7,8 +7,7 @@ const displayShows = (shows) => {
           <div class="title-row">
             <h2 class="name">${show.name}</h2>
             <div class="likes">
-            <span id="${show.id}" class="heart material-symbols-outlined">favorite</span>
-            <p class="num-display" id=${show.id}>0</p>
+            <span id="${show.id}" class="heart material-symbols-outlined">favorite</span>            <p class="num-display" id=${show.id}>0</p>
             </div>
           </div>
           <p class="genre">${show.genres}</p>

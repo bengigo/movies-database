@@ -23,3 +23,12 @@ displayContainer.addEventListener('click', (e) => {
   }
 });
 
+displayContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("heart")) {
+    const numDisplay = e.target.nextElementSibling;
+    let numOfLikes = Number(e.target.nextElementSibling.textContent);
+    numOfLikes = numOfLikes + 1;
+    numDisplay.textContent = String(numOfLikes);
+  }
+});
+

@@ -1,5 +1,5 @@
 const displayShows = (shows) => {
-  const displayContainer = document.querySelector("#list");
+  const displayContainer = document.querySelector('#list');
   shows.forEach((show) => {
     displayContainer.innerHTML += `
         <div class="show">

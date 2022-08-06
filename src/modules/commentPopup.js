@@ -1,20 +1,20 @@
 // import displayComments from "./getComments.js";
 // import fetchComments from './comments.js'
- 
+
 const comments = () => {
   const getShowData = async (id) => {
     const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
     const showData = await response.json();
     return showData;
   };
- 
-  const displayContainer = document.querySelector("#list");
-  displayContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("btn-comments")) {
+
+  const displayContainer = document.querySelector('#list');
+  displayContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-comments')) {
       const dialog = document.querySelector('dialog');
       dialog.showModal();
       const targetId = e.target.id;
- 
+
       getShowData(targetId).then((showData) => {
         dialog.innerHTML = `
         <div class="Popup-container">
@@ -36,45 +36,42 @@ const comments = () => {
         <textarea id="comments" name="commentMsg1" cols="40" rows="5" placeholder="Write you comment here.."></textarea>
         <button type="submit" id=${showData.id} class="submit-comments">Comment</button>
         </form>
-        `;    
- 
-        fetchComments(targetId)
-     
+        `;
+
+        fetchComments(targetId);
+
         const submit = document.querySelector('.submit-comments');
- 
-        submit.addEventListener('click', (e)=> {
-          e.preventDefault()
+
+        submit.addEventListener('click', (e) => {
+          e.preventDefault();
           const commentList = document.querySelector('.comment-section');
           const name = document.getElementById('name').value.trim();
           const addComment = document.getElementById('comments').value.trim();
           const form = document.querySelector('form');
-          const newComment = new Comment(+e.target.id, name, addComment)
+          const newComment = new Comment(+e.target.id, name, addComment);
           const date = Date().split(' ').splice(1, 3).join(' ')
-                  .split(' ')
-                   .reverse();
+            .split(' ')
+            .reverse();
           const month = ('JanFebMarAprMayJunJulAugSepOctNovDec'.indexOf(date.slice(2).join('')) / 3 + 1);
           const commentCount = document.querySelector('.comments-counter span');
-       
- 
+
           if (name && addComment) {
-            (postComment(newComment))
-            commentList.innerHTML += `<li>${date[0].concat(`-0${month}-${date[1]}`)} ${name}: ${addComment}</li>`
-            let count = +commentCount.textContent
-            count+=1
+            (postComment(newComment));
+            commentList.innerHTML += `<li>${date[0].concat(`-0${month}-${date[1]}`)} ${name}: ${addComment}</li>`;
+            let count = +commentCount.textContent;
+            count += 1;
             commentCount.textContent = count;
-          }      
-          form.reset();  
-        })
- 
+          }
+          form.reset();
+        });
       });
-    };
- 
- 
-    if (e.target.classList.contains("close")) {
+    }
+
+    if (e.target.classList.contains('close')) {
       const dialog = document.querySelector('dialog');
       dialog.close();
     }
- 
+
     const createComment = (comments) => {
       const commentCount = document.querySelector('.comments-counter');
       commentCount.innerHTML = `Comments (<span>${comments.length}</span>)`;
@@ -84,11 +81,9 @@ const comments = () => {
         commentList.innerHTML += `<li>${comment.creation_date}: ${comment.username}: ${comment.comment}</li>`;
       });
     };
- 
-   
-   
+
     const apiCommentURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/x3jKfe1LZsfM9ZMX6ICC/comments';
-   
+
     const fetchComments = async (id) => {
       const request = new Request(`${apiCommentURL}?item_id=${id}`);
       const response = await fetch(request);
@@ -98,7 +93,7 @@ const comments = () => {
       const getComment = await response.json();
       createComment(getComment);
     };
- 
+
     class Comment {
       constructor(item_id, username, comment) {
         this.item_id = item_id;
@@ -106,7 +101,7 @@ const comments = () => {
         this.comment = comment;
       }
     }
- 
+
     const postComment = async (comment) => {
       const posts = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/x3jKfe1LZsfM9ZMX6ICC/comments', {
         method: 'POST',
@@ -117,11 +112,8 @@ const comments = () => {
       });
       const result = await posts.json();
       return result;
-    };    
-     
+    };
   });
- 
 };
- 
- 
+
 export default comments;

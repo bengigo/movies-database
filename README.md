@@ -20,7 +20,7 @@
 
 ## Video Presentation
 
-[Video Presentation Link](https://drive.google.com/file/d/1GuBA_O6cSGohCIswKyfx4E8-lEnLcqyX/view?usp=sharing)
+[Video Presentation Link](https://drive.google.com/file/d/1IWFHCrNGp1mMYxpOmYPbc6ErwkF_M2V5/view?usp=sharing)
 
 ## Getting Started
 
@@ -67,3 +67,5 @@ Give a ⭐️ if you like this project!
 -Thank you to Microverse Inc.
 
 ## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

@@ -1,3 +1,5 @@
+import displayComments from './comments.js';
+
 const comments = () => {
   const getShowData = async (id) => {
     const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
@@ -18,16 +20,27 @@ const comments = () => {
         <span class="close material-symbols-outlined">&times</span>
         <img class="popup-poster" src="${showData.image.medium}">
         <div class="title-row">
-          <h3>${showData.name}</h3><span>${showData.rating.average}</span>
+          <h3>${showData.name}</h3> ⭐<span>${showData.rating.average}</span>
         </div>
         <p class="poster-container">${showData.genres}</p>
         <p class="poster-container">${showData.language}</p>
         <p class="poster-container">${showData.summary}</p>
+        <br>
+        <ul class="comment-section">
+        <h3 class="comments-counter">Comments(0)</h3>
+        </ul>
         </div>
-
         `;
       });
     }
+
+    if (e.target.classList.contains('close')) {
+      const dialog = document.querySelector('dialog');
+      dialog.close();
+    }
+    const targetId = e.target.id;
+
+    displayComments(targetId);
 
     if (e.target.classList.contains('close')) {
       const dialog = document.querySelector('dialog');

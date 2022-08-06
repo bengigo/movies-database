@@ -1,6 +1,8 @@
-// import fetchReservations from './api-info';
+import fetchReservations from './api-info.js';
+import addReservation from './addReservation.js';
+
 const displayReserve = () => {
-  const showTheReservePopUp = (info) => {
+  const showTheReservePopUp = ({ ...info }) => {
     const thePopUpInfo = document.querySelector('#show-the-reservation');
     thePopUpInfo.innerHTML = `
       <span class="material-symbols-outlined">
@@ -22,6 +24,20 @@ const displayReserve = () => {
             <strong>Ended</strong>: ${info.ended}
             </li>
         </ol>
+        <h3 class="reservation-title">
+        reservation (<span class="total-reservations">0</span>)
+      </h3>
+      <ul class="reservations">
+          reservation data
+      </ul>
+      
+      <h2>Book Reservation</h2>
+      <div class="Reserv-form">
+      <input type="text" name="username" class="username" id="username" placeholder="Your name" required>
+      <input type="text" name="dateStart" class="dateStart" id="date-started" placeholder="Start date" required>
+      <input type="text" name="dateEnd" class="dateEnd" id="data-ended" placeholder="End date" required>
+      <button class="add-reserve-btn" id="${info.id}" type="submit">Submit</button>
+      </div>
         `;
     const hideReservationBtn = thePopUpInfo.querySelector(
       '.material-symbols-outlined',
@@ -31,7 +47,47 @@ const displayReserve = () => {
     hideReservationBtn.addEventListener('click', () => {
       document.querySelector('#show-the-reservation').style.display = 'none';
     });
+    const data = () => {
+      fetchReservations(info.id).then((res) => {
+        const reservations = thePopUpInfo.querySelector('.reservations');
+        if (res.error === true) {
+          reservations.innerHTML = 'Book a Reservation, we are expecting you.';
+        } else {
+          reservations.innerHTML = '';
+          res.data.forEach((reservation) => {
+            reservations.innerHTML += `
+            <li>From ${reservation.date_start} to ${reservation.date_end} by ${reservation.username}</li>
+            `;
+          });
+        }
+      });
+    };
+    const name = document.querySelector('#username');
+    const start = document.querySelector('#date-started');
+    const end = document.querySelector('#data-ended');
+    const reserveBtn = document.querySelector('.add-reserve-btn');
+    reserveBtn.addEventListener('click', (e) => {
+      const id = e.target.attributes.id.value;
+      addReservation(id, name, start, end).then(data());
+      name.value = '';
+      start.value = '';
+      end.value = '';
+    });
+    fetchReservations(info.id).then((res) => {
+      const reservations = thePopUpInfo.querySelector('.reservations');
+      if (res.error === true) {
+        reservations.innerHTML = 'Book a Reservation, we are expecting you.';
+      } else {
+        reservations.innerHTML = '';
+        res.data.forEach((reservation) => {
+          reservations.innerHTML += `
+          <li><strong>From</strong> ${reservation.date_start} <strong>to</strong> ${reservation.date_end} <strong>by</strong> ${reservation.username}</li>
+          `;
+        });
+      }
+    });
   };
+
   const shows = document.querySelectorAll('.btn-reservations');
   shows.forEach((show) => {
     const id = show.getAttribute('id');

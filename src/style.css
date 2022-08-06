@@ -193,3 +193,7 @@ dialog .close {
   display: flex;
   align-self: center;
 }
+
+.reservations {
+  list-style-type: none;
+}

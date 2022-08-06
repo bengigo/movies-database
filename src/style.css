@@ -142,6 +142,29 @@ dialog .close {
   text-align: center;
 }
 
+.add-comments {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
+}
+
+#name {
+  width: 40vw;
+  align-items: center;
+}
+
+#comments {
+  width: 40vw;
+  align-items: center;
+}
+
+.submit-comments {
+  align-items: center;
+  width: 40vw;
+}
+
 #show-the-reservation {
   display: none;
   position: fixed;

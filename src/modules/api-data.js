@@ -1,4 +1,4 @@
-import displayShows from './displayList.js';
+import displayShows from './displayList';
 import displayReserve from './reservationPopUp.js';
 
 const getData = async () => {

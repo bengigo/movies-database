@@ -1,3 +1,4 @@
+
 export const countComment = () => {
   const commentsCounterSpan = document.querySelector('.comments-counter');
 
@@ -28,3 +29,4 @@ export const getComment = (idTarget) => {
 };
 
 export default getComment;
+

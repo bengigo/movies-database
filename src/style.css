@@ -1,0 +1,239 @@
+* {
+  font-family: 'Lora', serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+}
+
+#navigation {
+  display: flex;
+  padding: 15px;
+}
+
+.over-lay {
+  height: 50vw;
+  width: 100vw;
+  position: absolute;
+  max-width: inherit;
+  z-index: 5;
+  display: none;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.over-lay.active {
+  display: block;
+}
+
+.logo {
+  justify-content: flex-start;
+  color: #000;
+  text-decoration: none;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 20px;
+  align-items: center;
+  margin-left: 100px;
+}
+
+#other-interfaces {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.interface {
+  color: #000;
+  margin-left: 300px;
+  text-decoration: none;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 20px;
+}
+
+#list {
+  margin: 80px auto;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 60px;
+  grid-column-gap: 60px;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+}
+
+img {
+  height: 300px;
+  width: 210px;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  bottom: 10px;
+  border-top: 2px solid black;
+  width: 100vw;
+  padding: 15px 100px;
+}
+
+#footer a {
+  text-decoration: none;
+}
+
+/* comment pop-up */
+.Popup-container {
+  position: fixed;
+  border: none;
+  background-color: rgba(221, 221, 221, 0.959);
+  max-width: 100%;
+  overflow: scroll;
+  height: 100vh;
+}
+
+dialog .close {
+  position: fixed;
+  font-size: 42px;
+  right: 50px;
+  z-index: 999;
+  cursor: pointer;
+  padding: 5px;
+  border-top: 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.popup-poster {
+  text-align: center;
+  margin-left: 550px;
+}
+
+.title-row {
+  width: 50%;
+  margin: auto;
+  color: #000;
+  text-align: center;
+}
+
+.poster-container {
+  width: 100%;
+  text-align: center;
+}
+
+.comments-counter {
+  cursor: pointer;
+  text-align: center;
+}
+
+.add-comments {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
+}
+
+#name {
+  width: 40vw;
+  align-items: center;
+}
+
+#comments {
+  width: 40vw;
+  align-items: center;
+}
+
+.submit-comments {
+  align-items: center;
+  width: 40vw;
+}
+
+#show-the-reservation {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: burlywood;
+  padding-top: 5px;
+  color: #000;
+  overflow-y: auto;
+}
+
+.material-symbols-outlined {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.movieContent {
+  display: block;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.movie-title {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#movie-metrics {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Reserv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#username,
+#date-started,
+#data-ended {
+  border-radius: 100px;
+  height: 5vh;
+  font-style: italic;
+  padding-left: 10px;
+}
+
+.add-reserve-btn {
+  width: 20%;
+  display: flex;
+  align-self: center;
+}
+
+.reservations {
+  list-style-type: none;
+}
+
+.heart {
+  position: relative;
+}
+
+.likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

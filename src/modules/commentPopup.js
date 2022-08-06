@@ -1,8 +1,3 @@
-
-// import displayComments from "./getComments.js";
-// import fetchComments from './comments.js'
- 
-
 import displayComments from './comments.js';
 
 const comments = () => {

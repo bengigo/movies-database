@@ -14,13 +14,13 @@
 - Involvement API
 - Jest
 
-<!-- ## Live Demo
+## Live Demo
 
-[Live Demo Link]() -->
+[Live Demo Link](https://drive.google.com/file/d/1GuBA_O6cSGohCIswKyfx4E8-lEnLcqyX/view?usp=sharing)
 
 ## Video Presentation
 
-[Video Presentation Link]()
+[Video Presentation Link](https://drive.google.com/file/d/1GuBA_O6cSGohCIswKyfx4E8-lEnLcqyX/view?usp=sharing)
 
 ## Getting Started
 

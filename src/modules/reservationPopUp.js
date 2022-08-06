@@ -1,5 +1,6 @@
 import fetchReservations from './api-info.js';
 import addReservation from './addReservation.js';
+
 const displayReserve = () => {
   const showTheReservePopUp = ({ ...info }) => {
     const thePopUpInfo = document.querySelector('#show-the-reservation');
@@ -39,7 +40,7 @@ const displayReserve = () => {
       </div>
         `;
     const hideReservationBtn = thePopUpInfo.querySelector(
-      '.material-symbols-outlined'
+      '.material-symbols-outlined',
     );
     thePopUpInfo.style.display = 'flex';
 
@@ -50,7 +51,7 @@ const displayReserve = () => {
       fetchReservations(info.id).then((res) => {
         const reservations = thePopUpInfo.querySelector('.reservations');
         const reservationsCounter = thePopUpInfo.querySelector(
-          '.numberOf-reservations-booked'
+          '.numberOf-reservations-booked',
         );
         if (res.error === true) {
           reservationsCounter.innerHTML = '0';
@@ -80,7 +81,7 @@ const displayReserve = () => {
     fetchReservations(info.id).then((res) => {
       const reservations = thePopUpInfo.querySelector('.reservations');
       const reservationsCounter = thePopUpInfo.querySelector(
-        '.numberOf-reservations-booked'
+        '.numberOf-reservations-booked',
       );
       if (res.error === true) {
         reservationsCounter.innerHTML = '0';

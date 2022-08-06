@@ -4,6 +4,7 @@ import getData from './modules/api-data.js';
 import comments from './modules/commentPopup.js';
 import displayComments from './modules/comments.js';
 import { getLikes, postLikes } from './modules/likesData.js';
+import countShows from "./modules/showCounter";
 
 
 getData();
@@ -32,3 +33,4 @@ displayContainer.addEventListener("click", (e) => {
   }
 });
 
+countShows();

@@ -2,7 +2,7 @@ const displayShows = (shows) => {
   const displayContainer = document.querySelector('#list');
   shows.forEach((show) => {
     displayContainer.innerHTML += `
-        <div class="show">
+        <div class="show" id="${show.id}">
           <img class="poster" src="${show.image.medium}" alt="${show.name} poster">
           <div class="title-row">
             <h2 class="name">${show.name}</h2>
@@ -18,10 +18,11 @@ const displayShows = (shows) => {
           premier="${show.premiered}"
           ended="${show.ended}"
           rating="${show.rating.average}"> Book Reservations</button>
-          </div>
 
           
           <dialog></dialog>
+          </div>
+
         `;
   });
 };

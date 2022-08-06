@@ -61,7 +61,7 @@ const displayReserve = () => {
           reservationsCounter.innerHTML = res.data.length;
           res.data.forEach((reservation) => {
             reservations.innerHTML += `
-            <li>From ${reservation.date_start} to ${reservation.date_end} by ${reservation.username}</li>
+            <li><strong>From</strong> ${reservation.date_start} <strong>to</strong> ${reservation.date_end} <strong>by</strong> ${reservation.username}</li>
             `;
           });
         }
@@ -77,6 +77,8 @@ const displayReserve = () => {
       name.value = '';
       start.value = '';
       end.value = '';
+
+      data();
     });
     fetchReservations(info.id).then((res) => {
       const reservations = thePopUpInfo.querySelector('.reservations');

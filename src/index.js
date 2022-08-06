@@ -4,7 +4,6 @@ import comments from './modules/commentPopup.js';
 import displayComments from './modules/comments.js';
 import { getLikes, postLikes } from './modules/likesData.js';
 
-
 getData();
 
 comments();
@@ -19,4 +18,3 @@ displayContainer.addEventListener('click', (e) => {
     postLikes(targetId);
   }
 });
-

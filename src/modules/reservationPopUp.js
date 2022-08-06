@@ -25,11 +25,11 @@ const displayReserve = () => {
             </li>
         </ol>
         <h3 class="reservation-title">
-        reservation (<span class="total-reservations">0</span>)
+        reservation (<span class="numberOf-reservations-booked">0</span>)
       </h3>
-      <ul class="reservations">
+      <span class="reservations">
           reservation data
-      </ul>
+      </span>
       
       <h2>Book Reservation</h2>
       <div class="Reserv-form">
@@ -50,13 +50,18 @@ const displayReserve = () => {
     const data = () => {
       fetchReservations(info.id).then((res) => {
         const reservations = thePopUpInfo.querySelector('.reservations');
+        const reservationsCounter = thePopUpInfo.querySelector(
+          '.numberOf-reservations-booked',
+        );
         if (res.error === true) {
-          reservations.innerHTML = 'Book a Reservation, we are expecting you.';
+          reservationsCounter.innerHTML = '0';
+          reservations.innerHTML = 'Book a reservation, we are expecting you';
         } else {
           reservations.innerHTML = '';
+          reservationsCounter.innerHTML = res.data.length;
           res.data.forEach((reservation) => {
             reservations.innerHTML += `
-            <li>From ${reservation.date_start} to ${reservation.date_end} by ${reservation.username}</li>
+            <li><strong>From</strong> ${reservation.date_start} <strong>to</strong> ${reservation.date_end} <strong>by</strong> ${reservation.username}</li>
             `;
           });
         }
@@ -72,16 +77,23 @@ const displayReserve = () => {
       name.value = '';
       start.value = '';
       end.value = '';
+
+      data();
     });
     fetchReservations(info.id).then((res) => {
       const reservations = thePopUpInfo.querySelector('.reservations');
+      const reservationsCounter = thePopUpInfo.querySelector(
+        '.numberOf-reservations-booked',
+      );
       if (res.error === true) {
-        reservations.innerHTML = 'Book a Reservation, we are expecting you.';
+        reservationsCounter.innerHTML = '0';
+        reservations.innerHTML = 'Book a reservation, we are expecting you';
       } else {
         reservations.innerHTML = '';
+        reservationsCounter.innerHTML = res.data.length;
         res.data.forEach((reservation) => {
           reservations.innerHTML += `
-          <li><strong>From</strong> ${reservation.date_start} <strong>to</strong> ${reservation.date_end} <strong>by</strong> ${reservation.username}</li>
+          <li><strong>From</strong> ${reservation.date_start} <strong>to</strong> ${reservation.date_end}<strong> by</strong> ${reservation.username}</li>
           `;
         });
       }

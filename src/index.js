@@ -4,6 +4,7 @@ import getData from './modules/api-data.js';
 import comments from './modules/commentPopup.js';
 import displayComments from './modules/comments.js';
 import { getLikes, postLikes } from './modules/likesData.js';
+import countShows from "./modules/showCounter";
 
 
 getData();
@@ -23,3 +24,13 @@ displayContainer.addEventListener('click', (e) => {
   }
 });
 
+displayContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("heart")) {
+    const numDisplay = e.target.nextElementSibling;
+    let numOfLikes = Number(e.target.nextElementSibling.textContent);
+    numOfLikes = numOfLikes + 1;
+    numDisplay.textContent = String(numOfLikes);
+  }
+});
+
+countShows();

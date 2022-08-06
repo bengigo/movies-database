@@ -49,7 +49,7 @@ const comments = () => {
 
     const createComment = (comments) => {
       const commentCount = document.querySelector('.comments-counter');
-      commentCount.innerHTML = `(${comments.length})`;
+      commentCount.innerHTML = `comments(${comments.length})`;
       const commentList = document.querySelector('.comment-section');
       commentList.innerHTML = '';
       comments.forEach((comment) => {

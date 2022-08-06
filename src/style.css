@@ -206,3 +206,13 @@ dialog .close {
 .reservations {
   list-style-type: none;
 }
+
+.heart {
+  position: relative;
+}
+
+.likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

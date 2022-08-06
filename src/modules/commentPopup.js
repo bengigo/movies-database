@@ -1,5 +1,9 @@
+
 // import displayComments from "./getComments.js";
 // import fetchComments from './comments.js'
+ 
+
+import displayComments from './comments.js';
 
 const comments = () => {
   const getShowData = async (id) => {
@@ -11,6 +15,15 @@ const comments = () => {
   const displayContainer = document.querySelector('#list');
   displayContainer.addEventListener('click', (e) => {
     if (e.target.classList.contains('btn-comments')) {
+ 
+  const displayContainer = document.querySelector("#list");
+  displayContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn-comments")) {
+
+  const displayContainer = document.querySelector('#list');
+  displayContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-comments')) {
+
       const dialog = document.querySelector('dialog');
       dialog.showModal();
       const targetId = e.target.id;
@@ -30,6 +43,7 @@ const comments = () => {
         <h3 class="comments-counter">Comments(<span>0</span>)</h3>
         <ul class="comment-section">
         </ul>
+
         <form action="#" class="add-comments" id="comment-form">
         <h3>Add your comment</h3>
         <input type="text" id="name" name="username1" placeholder="Type your name here">
@@ -115,5 +129,9 @@ const comments = () => {
     };
   });
 };
+});
 
+};
+  });
+};
 export default comments;

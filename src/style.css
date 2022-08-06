@@ -1,5 +1,5 @@
 * {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -100,8 +100,10 @@ img {
   border: none;
   background-color: rgba(221, 221, 221, 0.959);
   max-width: 100%;
-  height: 100%;
+
+  /* height: 100%; */
   overflow: scroll;
+  height: 100vh;
 }
 
 dialog .close {
@@ -161,4 +163,79 @@ dialog .close {
 .submit-comments {
   align-items: center;
   width: 40vw;
+}
+
+#show-the-reservation {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: burlywood;
+  padding-top: 5px;
+  color: #000;
+  overflow-y: auto;
+}
+
+.material-symbols-outlined {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.movieContent {
+  display: block;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.movie-title {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#movie-metrics {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Reserv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#username,
+#date-started,
+#data-ended {
+  border-radius: 100px;
+  height: 5vh;
+  font-style: italic;
+  padding-left: 10px;
+}
+
+.add-reserve-btn {
+  width: 20%;
+  display: flex;
+  align-self: center;
+}
+
+.reservations {
+  list-style-type: none;
+}
+
+.heart {
+  position: relative;
+}
+
+.likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
